@@ -23,7 +23,8 @@ import javax.xml.xpath.XPathFactory;
 
 import net.sf.json.JSON;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -36,7 +37,7 @@ import com.wm.common.exception.ExceptionConstant;
 import com.wm.common.lang.constant.CharsetConstant;
 
 public class XMLUtil {
-	private static final Logger LOGGER = Logger.getLogger(XMLUtil.class);
+	private static final Logger LOGGER = LogManager.getLogger(XMLUtil.class);
 	private static final String CHARSET_DEFAULT = CharsetConstant.UTF_8;
 
 	public static void print(Node node) {

@@ -14,12 +14,13 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.wm.common.exception.ParameterException;
 
 public class UploadFile {
-	private static final Logger LOGGER = Logger.getLogger(UploadFile.class);
+	private static final Logger LOGGER = LogManager.getLogger(UploadFile.class);
 
 	/**
 	 * 文件上传

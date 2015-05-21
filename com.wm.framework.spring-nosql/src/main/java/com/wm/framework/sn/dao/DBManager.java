@@ -14,7 +14,7 @@ import com.sequoiadb.base.SequoiadbOption;
 import com.sequoiadb.exception.BaseException;
 import com.sequoiadb.net.ConfigOptions;
 import com.wm.common.exception.DBException;
-import com.wm.common.util.PropertiesExpand;
+import com.wm.common.io.PropertiesExpand;
 
 public class DBManager {
 

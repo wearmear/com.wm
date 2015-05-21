@@ -11,7 +11,8 @@ import java.util.List;
 
 import net.sf.json.JSONArray;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -23,7 +24,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelFile {
-	private static final Logger LOGGER = Logger.getLogger(ExcelFile.class);
+	private static final Logger LOGGER = LogManager.getLogger(ExcelFile.class);
 
 	public ExcelFile(String filePath) throws IOException {
 		this.filePath = filePath;

@@ -10,9 +10,10 @@ import java.sql.SQLException;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import com.supermap.sql.config.DBConfig;
+import config.DBConfig;
 
 /**
  * 数据库查询公共类
@@ -22,7 +23,7 @@ import com.supermap.sql.config.DBConfig;
  */
 public class DBUtil {
 
-	private static Logger LOGGER = Logger.getLogger(DBUtil.class);
+	private static Logger LOGGER = LogManager.getLogger(DBUtil.class);
 	private static PreparedStatement ps;
 	private static Connection conn = null;
 
@@ -34,9 +35,9 @@ public class DBUtil {
 						DBConfig.PASSWORD);
 				LOGGER.info("isConnection: " + !conn.isClosed());
 			} catch (ClassNotFoundException e) {
-				LOGGER.error(null, e);
+				LOGGER.error(e);
 			} catch (SQLException e) {
-				LOGGER.error(null, e);
+				LOGGER.error(e);
 			}
 		}
 	}
@@ -163,7 +164,7 @@ public class DBUtil {
 			influencedCount = ps.executeUpdate(sql);
 			ps.close();
 		} catch (SQLException e) {
-			LOGGER.error(null, e);
+			LOGGER.error(e);
 		}
 		LOGGER.info("update结果,influencedCount : " + influencedCount);
 		return influencedCount;
@@ -211,12 +212,12 @@ public class DBUtil {
 					break;
 				}
 			} catch (SQLException e) {
-				LOGGER.error(null, e);
+				LOGGER.error(e);
 			}
 			try {
 				Thread.sleep(millis);
 			} catch (InterruptedException e) {
-				LOGGER.error(null, e);
+				LOGGER.error(e);
 			}
 			if (i == reconnectionCount) {
 				break;
@@ -233,7 +234,7 @@ public class DBUtil {
 			try {
 				conn.close();
 			} catch (SQLException e) {
-				LOGGER.error(null, e);
+				LOGGER.error(e);
 			} finally {
 				conn = null;
 			}

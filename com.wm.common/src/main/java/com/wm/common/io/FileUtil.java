@@ -12,7 +12,8 @@ import java.io.LineNumberReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /***
  * 
@@ -20,7 +21,7 @@ import org.apache.log4j.Logger;
  *
  */
 public class FileUtil {
-	private static Logger LOGGER = Logger.getLogger(FileUtil.class);
+	private static Logger LOGGER = LogManager.getLogger(FileUtil.class);
 
 	/**
 	 * 根据行号和指定读取行数读取文件

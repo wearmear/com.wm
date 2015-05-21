@@ -17,7 +17,8 @@ import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
 import org.apache.commons.compress.archivers.zip.ZipFile;
 import org.apache.commons.compress.utils.IOUtils;
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /***
  * 
@@ -26,7 +27,7 @@ import org.apache.log4j.Logger;
  */
 public class ZipUtil {
 
-	private static final Logger LOGGER = Logger.getLogger(ZipUtil.class);
+	private static final Logger LOGGER = LogManager.getLogger(ZipUtil.class);
 
 	/**
 	 * 功能:压缩多个文件成一个zip文件

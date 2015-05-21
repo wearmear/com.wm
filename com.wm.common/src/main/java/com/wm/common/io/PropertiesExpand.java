@@ -12,11 +12,12 @@ import java.io.UnsupportedEncodingException;
 import java.util.Enumeration;
 import java.util.Properties;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class PropertiesExpand extends Properties {
 	private static final long serialVersionUID = 1L;
-	private static final Logger LOGGER = Logger.getLogger(PropertiesExpand.class);
+	private static final Logger LOGGER = LogManager.getLogger(PropertiesExpand.class);
 	private String charsetName = "UTF-8";
 
 	public PropertiesExpand() {
